@@ -26,4 +26,56 @@ A simple Java-based console application to manage a grocery shopping list using 
 ---
 
 ## 🧠 Project Structure
+GroceryStoreManagementSystem/
+│
+├── GroceryItem.java
+├── GroceryStore.java
+├── GroceryStoreApp.java
+├── grocery_items.txt
+└── README.md
+
+
+---
+
+## 🚀 How to Run
+
+1. Clone the repository  
+```bash
+git clone https://github.com/your-username/GroceryStoreManagementSystem.git
+
+
+
+
+Open the project in IntelliJ IDEA or Eclipse.
+
+Run the GroceryStoreApp.java file.
+
+
+File Format (grocery_items.txt)
+Each line contains:
+
+mathematica
+Copy
+Edit
+ItemName,Quantity,PricePerUnit
+Example:
+
+Copy
+Edit
+Milk,2,30.5
+Bread,1,25
+Eggs,12,6.5
+📋 Sample Output
+mathematica
+Copy
+Edit
+Grocery Store Menu:
+1. Add Item
+2. Delete Item
+3. Display Items
+4. Calculate Total
+5. Save and Exit
+Choose an option:
+
+
 
