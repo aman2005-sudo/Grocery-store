@@ -4,6 +4,10 @@ public class GroceryStore {
     private GroceryItem head;
 
     public void addItem(String name, int quantity, double price) {
+        if (quantity <= 0 || price < 0) {
+            System.out.println("Invalid quantity or price. Must be positive.");
+            return;
+        }
         GroceryItem newItem = new GroceryItem(name, quantity, price);
         if (head == null) {
             head = newItem;
@@ -14,6 +18,7 @@ public class GroceryStore {
             }
             current.next = newItem;
         }
+        System.out.println("Item added successfully.");
     }
 
     public void deleteItem(String name) {
@@ -49,8 +54,9 @@ public class GroceryStore {
         }
 
         System.out.println("\nItems in cart:");
+        System.out.printf("%-15s %-10s %-10s %-10s%n", "Name", "Quantity", "Price", "Total");
         while (current != null) {
-            System.out.printf("Name: %s | Quantity: %d | Price: %.2f | Total: %.2f%n",
+            System.out.printf("%-15s %-10d ₹%-9.2f ₹%-10.2f%n",
                     current.name, current.quantity, current.price, current.getTotalPrice());
             current = current.next;
         }
@@ -63,11 +69,11 @@ public class GroceryStore {
             total += current.getTotalPrice();
             current = current.next;
         }
-        System.out.printf("Total bill: %.2f%n", total);
+        System.out.printf("Total bill: ₹%.2f%n", total);
     }
 
     public void saveToFile(String filename) {
-        try (FileWriter writer = new FileWriter(filename)) {
+        try (BufferedWriter writer = new BufferedWriter(new FileWriter(filename))) {
             GroceryItem current = head;
             while (current != null) {
                 writer.write(current.name + "," + current.quantity + "," + current.price + "\n");
@@ -92,10 +98,10 @@ public class GroceryStore {
                 }
             }
             System.out.println("Items loaded from file.");
-        } catch (IOException e) {
+        } catch (FileNotFoundException e) {
             System.out.println("No saved items found.");
-        } catch (NumberFormatException e) {
-            System.out.println("Invalid data in file.");
+        } catch (IOException | NumberFormatException e) {
+            System.out.println("Error loading items: " + e.getMessage());
         }
     }
 }
