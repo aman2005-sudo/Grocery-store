@@ -1,81 +1,100 @@
-# 🛒 Grocery Store Management System
+# 🛒 Grocery Store Management System (Console-Based Java Project)
 
-A simple Java-based console application to manage a grocery shopping list using object-oriented programming, linked lists, and file handling.
-
----
-
-## 📌 Features
-
-- ➕ **Add Item** – Add grocery items with name, quantity, and price.
-- ❌ **Delete Item** – Remove items by name from the cart.
-- 📋 **Display Items** – Show all items along with total price per item.
-- 💰 **Calculate Total** – View the total bill for all items.
-- 💾 **Save & Load** – Automatically saves data to a file and loads on restart.
+A simple console-based grocery store management system built using Java. This project demonstrates file handling, data validation, layered architecture, and a clean user interface in the console.
 
 ---
 
-## 💻 Technologies Used
-
-| Component      | Description                       |
-|----------------|-----------------------------------|
-| Language       | Java                              |
-| IDE            | IntelliJ IDEA / Eclipse           |
-| Data Storage   | Text File (`grocery_items.txt`)   |
-| Key Concepts   | Classes, Linked List, File I/O, Exception Handling |
-
----
-
-## 🧠 Project Structure
+## 📁 Project Structure
 GroceryStoreManagementSystem/
-│
-├── GroceryItem.java
-├── GroceryStore.java
-├── GroceryStoreApp.java
-├── grocery_items.txt
+├── GroceryItem.java // Model class
+├── GroceryStore.java // DAO class for File I/O and operations
+├── GroceryStoreApp.java // Main class with user menu
+├── grocery_items.txt // File for storing data
 └── README.md
 
+---
+
+## 🔧 JDK & IDE Setup
+
+- *JDK Version:* Java 8 or above
+- *IDE Used:* IntelliJ IDEA / Eclipse
+- Project created with proper folder and file structure.
 
 ---
 
-## 🚀 How to Run
+## 🗃 File-Based Storage System
 
-1. Clone the repository  
+- Data is saved in a file named grocery_items.txt.
+- Used java.io.* package for performing:
+  - Create / Read / Update / Delete operations.
+- File is auto-created if not present.
+
+---
+
+## 🧱 Architecture
+
+This project follows a basic layered architecture:
+
+- *Model:* GroceryItem.java  
+- *DAO:* GroceryStore.java  
+- *Controller/UI:* GroceryStoreApp.java  
+
+---
+
+## 💻 Features
+
+| Feature           | Description                                      |
+|------------------|--------------------------------------------------|
+| ➕ Add Item       | Add grocery item with name, quantity, price      |
+| ❌ Delete Item    | Delete an item by name                           |
+| 📋 Display Items  | Show all items with their total prices           |
+| 💰 Calculate Bill | Calculate and display total cost of all items    |
+| 💾 Save & Load    | Automatically loads and saves to a text file     |
+
+---
+
+## 🎨 Console UI/UX Design
+
+- Clear menu with numbered options
+- Error messages for invalid inputs
+- Simple and responsive interaction
+- Input is validated before processing
+
+---
+
+
+## 🔗 GitHub Link
+
+[🔗 Click Here to View Repository](https://github.com/your-username/GroceryStoreManagementSystem)
+
+---
+
+## ✅ How to Run
+
+1. Clone the repository:
 ```bash
-git clone https://github.com/your-username/GroceryStoreManagementSystem.git
+git clone https://github.com/aman2005-sudo/Grocery-store/edit/main/README.md
 
+2)Open in your IDE (IntelliJ/Eclipse).
 
+3)Run GroceryStoreApp.java.
 
+📄 Sample File Format (grocery_items.txt)
 
-Open the project in IntelliJ IDEA or Eclipse.
-
-Run the GroceryStoreApp.java file.
-
-
-File Format (grocery_items.txt)
-Each line contains:
-
-mathematica
-Copy
-Edit
-ItemName,Quantity,PricePerUnit
-Example:
-
-Copy
-Edit
 Milk,2,30.5
 Bread,1,25
 Eggs,12,6.5
-📋 Sample Output
-mathematica
-Copy
-Edit
-Grocery Store Menu:
-1. Add Item
-2. Delete Item
-3. Display Items
-4. Calculate Total
-5. Save and Exit
-Choose an option:
 
+📌 Evaluation Criteria Addressed
+| Criteria                          | Status |
+| --------------------------------- | ------ |
+| JDK & IDE Setup                   | ✅ Done |
+| Project Structure Defined         | ✅ Done |
+| File CRUD using IO Package        | ✅ Done |
+| Layered Architecture (Model, DAO) | ✅ Done |
+| Console UI – Clean & Aligned      | ✅ Done |
+| Input Validation                  | ✅ Done |
+| File Auto Creation                | ✅ Done |
+| GitHub Repo with README           | ✅ Done |
 
 
